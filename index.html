@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Nutrition App </title>
+        <meta charset="utf-8">
+        <meta name="description" content="Nutrition">
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <!-- <script type="module" src="./script.js"></script> -->
+        <script type="module" src="./script.js" data-app-id="25850a88" data-app-key="20152365123f3840844e83ccba300a4f"></script>
 
+    </head>
+    <body>
+        <header>
+            <h1>MealMentor</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Search Foods</a></li>
+                <li><a href="#">My Meals</a></li>
+                <li><a href="#">My Dietary Restrictions</a></li>
+         </ul>
+        </nav>
+        <div class="main">
+            <div class="about">
+                <h2> About </h2>
+                <p> 
+                    MealMentor is an app that provides its users with information on 
+                    the nutritional content of their meals and ensure they meet 
+                    their dietary needs and restrictions. It's aim is to promote better health
+                    and diet while keeping meals as tasty as possible. 
+                </p>
+                <p>
+                    You can search for different foods to find out about their indiviaul nutritional content,
+                    or enter a meal and let us break it down and inform you of the nutritional content of the
+                    meal. In addition, you can enter your allergies, ilnesses and more to see what foods you 
+                    should and should not be consuming.
+                </p>
+            </div>
+            <div class="search">
+                <h2>Search for Foods</h2>
+                <form id="food-search-form">
+                  <label for="food-search">Search for Foods:</label>
+                  <input type="text" id="food-search" name="food-search">
+                  <input type="submit" value="Search">
+                </form>
+                <div id="food-results">
+                  <!-- Display search results here -->
+                </div>
+            </div>
+            <div> 
+                <h2> Add a Meal </h2>
+                <form>
+                    <label> Enter Ingredients in the Meal: </label>
+                    <input type="text" id="meal-add" name="meal-add">
+                    <input type="submit" value="Enter"> 
+                </form>
+                <div id="meal-results">
+
+                </div>
+            </div>
+            <div>
+                <h2> Previous Meals </h2>
+            </div>
+            <div>
+                <h2> My Dietary Restrictions </h2>
+                <form>
+                    <label> Enter Allergies </label>
+                    <input type="text" id="allergy-add" name="allergy-add">
+                    <input type="submit" value="Submit"> 
+                </form>
+            </div>
+        </div>
+        <!-- <footer>
+            <p>Copyright © 2023 Nutrition App
+        </footer> -->
+    </body>
+</html>
