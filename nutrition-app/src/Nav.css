@@ -1,0 +1,30 @@
+/* Navigation menu styles */
+nav {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+  nav li {
+    margin: 0 10px;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+  nav a:hover {
+    background-color: white;
+    color: #333;
+    border-radius: 5px;
+  }
