@@ -10,6 +10,25 @@ function AddMeal(props) {
   const [ingredientName, setIngredientName] = useState('');
   const [weight, setWeight] = useState('');
   const [mealDate, setMealDate] = useState('');
+  const [checkedNutrients, setCheckedNutrients] = useState({
+    calories: true,
+    fat: true,
+    saturatedFat: true,
+    cholesterol: true,
+    sodium: true,
+    carbs: true,
+    fiber: true,
+    sugar: true,
+    protein: true,
+  });
+
+  const handleNutrientCheck = (event) => {
+    const nutrient = event.target.name;
+    setCheckedNutrients({
+      ...checkedNutrients,
+      [nutrient]: event.target.checked,
+    });
+  };
 
   const handleAddMeal = () => {
     setShowForm(true);
@@ -123,7 +142,7 @@ function AddMeal(props) {
             <span> </span>
             <span>{ingredient.weight}g</span>
             <span> </span>
-            <span>{Math.round(ingredient.calories)} calories</span>
+            <span>{Math.round(ingredient.calories)} calories </span>
           </div>
           ))}
           <div>

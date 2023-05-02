@@ -135,3 +135,7 @@ input[type="submit"]:hover {
   text-align: center;
   line-height: 1.5;
 }
+.nutrientList {
+  display: inline-block;
+  /* width: 120px; */
+}

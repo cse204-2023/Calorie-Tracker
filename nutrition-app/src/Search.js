@@ -62,8 +62,6 @@ function Search(props) {
         });
     };
     
-    
-
     return (
         <div className="search">
             <h2>Search for Foods</h2>
@@ -79,18 +77,18 @@ function Search(props) {
                     <p>{nutrients.brand}</p>
                     <ul>
                         <li>Calories: {nutrients.calories}</li>
-                        <li>Total Fat: {nutrients.fat} g</li>
-                        <li>Saturated Fat: {nutrients.saturatedFat} g</li>
-                        <li>Cholesterol: {nutrients.cholesterol} mg</li>
-                        <li>Sodium: {nutrients.sodium} mg</li>
-                        <li>Total Carbohydrate: {nutrients.carbs}g</li>
-                        <li>Dietary Fiber: {nutrients.fiber} g</li>
-                        <li>Sugar: {nutrients.sugar} g</li>
-                        <li>Protein: {nutrients.protein} g</li>
+                        <li>Total Fat: {(nutrients.fat).toFixed(2)} g</li>
+                        <li>Saturated Fat: {(nutrients.saturatedFat).toFixed(2)} g</li>
+                        <li>Cholesterol: {(nutrients.cholesterol).toFixed(2)} mg</li>
+                        <li>Sodium: {(nutrients.sodium).toFixed(2)} mg</li>
+                        <li>Total Carbohydrate: {(nutrients.carbs).toFixed(2)}g</li>
+                        <li>Dietary Fiber: {(nutrients.fiber).toFixed(2)} g</li>
+                        <li>Sugar: {(nutrients.sugar).toFixed(2)} g</li>
+                        <li>Protein: {(nutrients.protein).toFixed(2)} g</li>
                         <li>Fat: {nutrients.fat ? nutrients.fat.toFixed(1) + " g" : "-"}</li>
-                        <li>Carbohydrates: {nutrients.carbohydrates ? nutrients.carbohydrates.toFixed(1) + "g" : "-"}</li>
-                        <li>Fiber: {nutrients.fiber ? nutrients.fiber.toFixed(1) + " g" : "-"}</li>
-                        <li>Sugar: {nutrients.sugar ? nutrients.sugar.toFixed(1) + " g" : "-"}</li>
+                        <li>Carbohydrates: {nutrients.carbohydrates ? nutrients.carbohydrates.toFixed(2) + "g" : "-"}</li>
+                        <li>Fiber: {nutrients.fiber ? nutrients.fiber.toFixed(2) + " g" : "-"}</li>
+                        <li>Sugar: {nutrients.sugar ? nutrients.sugar.toFixed(2) + " g" : "-"}</li>
                         <li> Weight per Serving : {nutrients.servingWeight} g</li>
                     </ul>
                 </div>)}
