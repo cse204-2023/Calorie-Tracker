@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './AddMeal.css';
 import axios from 'axios';
-import Search from './Search';
 
 function AddMeal(props) {
   const [showForm, setShowForm] = useState(false);
@@ -10,25 +9,6 @@ function AddMeal(props) {
   const [ingredientName, setIngredientName] = useState('');
   const [weight, setWeight] = useState('');
   const [mealDate, setMealDate] = useState('');
-  const [checkedNutrients, setCheckedNutrients] = useState({
-    calories: true,
-    fat: true,
-    saturatedFat: true,
-    cholesterol: true,
-    sodium: true,
-    carbs: true,
-    fiber: true,
-    sugar: true,
-    protein: true,
-  });
-
-  const handleNutrientCheck = (event) => {
-    const nutrient = event.target.name;
-    setCheckedNutrients({
-      ...checkedNutrients,
-      [nutrient]: event.target.checked,
-    });
-  };
 
   const handleAddMeal = () => {
     setShowForm(true);
@@ -52,8 +32,6 @@ function AddMeal(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    // const meal = { name: mealName, ingredients: ingredients };
-    // const meal = { name: mealName, date: mealDate, ingredients: ingredients };
     const meal = { name: mealName, date: mealDate, ingredients: ingredients, weight: weight };
 
     props.addMeal(meal);
@@ -67,7 +45,6 @@ function AddMeal(props) {
     event.preventDefault();
   
     if (ingredientName.trim() !== '' && weight !== '') {
-      // var servingWeight = 2;
 
       try {
         const response = await axios.get(
@@ -123,19 +100,9 @@ function AddMeal(props) {
           <input type='text' id='meal-name' name='meal-name' value={mealName} onChange={handleMealNameChange} required />
 
           <label htmlFor='ingredients'>Ingredients:</label>
-          {/* <div> */}
             <input type='text' id='ingredient-name' name='ingredient-name' value={ingredientName} onChange={handleIngredientNameChange} />
             <input type='text' id='food-weight' name='food-weight' placeholder='Weight in grams' value={weight} onChange={(event) => setWeight(event.target.value)} />
             <button onClick={handleAddIngredient}>Add</button>
-          {/* </div> */}
-          {/* {ingredients.map((ingredient, index) => (
-            <div key={index}>
-              <span>{ingredient.name}</span>
-              <span> </span>
-              <span>{ingredient.quantity}g</span>
-            </div>
-
-          ))} */}
           {ingredients.map((ingredient, index) => (
           <div key={index}>
             <span>{ingredient.name}</span>
